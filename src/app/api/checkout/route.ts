@@ -9,8 +9,6 @@ import { validateCartItems } from "use-shopping-cart/utilities"
 export async function POST(req: NextRequest) {
   const cartDetails  = await req.json()
  
-
-  
   const stripeInventory = await stripe.products.list({
     expand: ["data.default_price"]
   })
