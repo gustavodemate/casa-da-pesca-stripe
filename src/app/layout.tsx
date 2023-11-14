@@ -2,8 +2,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import { Header } from './components/header'
+
 import CartProviderClient from './providers/cart-provider'
+import Header from './components/header'
 
 const roboto = Roboto({
   subsets: ['latin'],

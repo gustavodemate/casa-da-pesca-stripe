@@ -35,7 +35,7 @@ export function CartList() {
     
   }
 
-  return (
+return (
     <div className="flex flex-col">
       {cartDetails && Object.keys(cartDetails).map((key) => (
       <div className="" key={cartDetails[key].id}>
