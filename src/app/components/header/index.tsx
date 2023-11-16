@@ -3,9 +3,11 @@ import logo from "../../../../assets/logo.png"
 import { ShoppingCart } from "lucide-react";
 import HoverCardHeader from "../hover-card";
 import Link from "next/link";
+import { CartCount } from "./cart-count";
 
 
 export default function Header() {
+
 
   return (
     <header >
@@ -24,7 +26,7 @@ export default function Header() {
         
          <div>
           <Link href={'/cart'} className="text-gray-100 cursor-pointer">
-            <ShoppingCart size={32}/>
+            <CartCount />
           </Link>
         </div>
           
