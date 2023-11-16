@@ -3,14 +3,14 @@
 import { Button } from "@/app/components/button";
 import formattedPrice from "@/app/components/formattedPrice";
 import { Price } from "@/app/product/components/product-details/price";
-import { Trash2, X } from "lucide-react";
+import { Loader, Trash2, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useShoppingCart } from "use-shopping-cart";
 
 export function CartList() {
-  const { cartDetails, redirectToCheckout, formattedTotalPrice, removeItem, cartCount } = useShoppingCart()
+  const { cartDetails, removeItem, cartCount } = useShoppingCart()
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
 
   if (cartCount == 0) return 'seu carrinho está vazio!'
@@ -87,10 +87,18 @@ return (
        
       </div>
       ))}
-      <Button className="w-96 mt-8"
-      onClick={checkout}
+      <Button
+        className="w-96 mt-8"
+        onClick={checkout}
       >
-        realizar pagamento
+        {isCreatingCheckoutSession ? (
+          <div className="flex items-center justify-between gap-2">
+            <Loader className="animate-spin 2s repeat-infinite"/>{" "}
+            Finalizando...
+          </div>
+        ): (
+          'Realizar Pagamento'
+        )}
       </Button>
     </div>
   );

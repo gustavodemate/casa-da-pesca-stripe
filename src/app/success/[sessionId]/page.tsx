@@ -1,7 +1,8 @@
-import { SearchSuccessPage } from "@/app/lib/fetch-stripe";
+'use client'
 
 import { Check, MoveLeft } from "lucide-react";
 import Link from "next/link";
+import { useShoppingCart } from "use-shopping-cart";
 
 interface SuccessProps {
   params: {
@@ -9,14 +10,18 @@ interface SuccessProps {
   }
 }
 
-export default async function Success({ params }: SuccessProps) {
+export default function Success({ params }: SuccessProps) {
 
+  const { cartCount, clearCart } = useShoppingCart()
+
+  if (!params) {
+    window.location.href = process.env.NEXT_URL as string
+  }
+
+  if (cartCount! > 0) {
+    clearCart()
+  }
   
-
-  const session = await SearchSuccessPage(params.sessionId)
-
-  const customerName = session.customer_details?.name as string
-
   return (
     <div className="flex flex-col items-center justify-center mx-auto h-[656px]">
       <div className="flex flex-row justify-center items-center">
@@ -24,11 +29,10 @@ export default async function Success({ params }: SuccessProps) {
         <h1 className="text-6xl text-green-700">Compra efetuada!</h1>
       </div>      
       <section className="text-2xl max-w-[560px] text-center mt-8 leading-4">
-        <p>Obrigado pela confiança <strong className="text-2xl text-green-600">{customerName}.</strong> </p>
+        <p>Obrigado pela confiança.</p>
         
       </section>
-      
-        
+
         <Link href="/" className="mt-4 text-xl text-green-600 no-underline font-medium hover:text-green-400 flex gap-3 items-center">
            <MoveLeft /> 
            Voltar ao catálogo

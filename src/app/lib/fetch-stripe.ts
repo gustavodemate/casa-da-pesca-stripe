@@ -32,16 +32,7 @@ export async function getProductById(id: string) {
     price: (product.default_price as Stripe.Price).unit_amount ?? "0",
     defaultPriceId: (product.default_price as Stripe.Price).id ?? "0",
     currency: (product.default_price as Stripe.Price).currency ?? 'BRL',
-  }
-}
-
-export async function SearchSuccessPage(sessionId: string) {
-  const session = await stripe.checkout.sessions.retrieve(sessionId, {
-    expand: ["line_items", "line_items.data.price.product"],
-  })
-
-  return session
-}
+  }}
 
 
 
