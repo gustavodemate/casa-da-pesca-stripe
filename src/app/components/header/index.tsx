@@ -1,6 +1,5 @@
 import Image from "next/image";
 import logo from "../../../../assets/logo.png"
-import { ShoppingCart } from "lucide-react";
 import HoverCardHeader from "../hover-card";
 import Link from "next/link";
 import { CartCount } from "./cart-count";
