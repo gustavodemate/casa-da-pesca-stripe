@@ -14,7 +14,7 @@ export default function Header() {
         <h2 className="text-gray-100">FRETE GRÁTIS PARA TODO BRASIL</h2>
       </div>
 
-      <nav className="flex max-h-[30rem] flex-row items-center justify-around h-36 gap-12 bg-green-950 border-0 leading-5">
+      <nav className="flex max-h-[30rem] flex-row items-center justify-around h-36  bg-green-950 border-0 leading-5 xl:gap-12">
         <Link href={'/'}>
           <Image src={logo} height={128} width={128} alt=""/>
         </Link>

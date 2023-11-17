@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { Button } from '../button'
 
-import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
+import { useShoppingCart } from 'use-shopping-cart'
 
 import formattedPrice from '../formattedPrice'
 import { Product } from '@/app/lib/types'
@@ -17,9 +17,9 @@ export default function Store({ products }: Product) {
  
   
   return (
-    <div className="flex w-[1200px] flex-col bg-gray-50 mt-6 p-12 h-full">
-      <h3 className="font-bold text-3xl mb-12">Produtos</h3>
-      <section className='grid grid-cols-4 gap-8 items-end'>
+    <div className="flex w-[1200px] flex-col bg-gray-50 p-12 h-full xl:mt-6">
+      <h3 className="xl:mb-12 font-bold text-3xl">Produtos</h3>
+      <section className='flex flex-col items-center justify-center gap-8 xl:grid grid-cols-4'>
           {products.map((product) => {
             return (
               <div key={product.id} className='max-h-[30rem] flex flex-col boder gap-[0.2rem] cursor-pointer'>

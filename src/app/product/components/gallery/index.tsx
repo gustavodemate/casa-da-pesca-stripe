@@ -10,7 +10,7 @@ export default function Gallery({ product }: ProductById) {
   return (
     <div className="flex flex-col-reverse">
       
-      <div className="w-full h-[550px]">
+      <div className="w-full xl:h-[550px]">
         <Image
           priority
           src={product.imageUrl}

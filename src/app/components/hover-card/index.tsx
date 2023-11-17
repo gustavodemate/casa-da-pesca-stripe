@@ -5,7 +5,7 @@ import { LucideMessagesSquare } from 'lucide-react';
 
 export default function HoverCardHeader() {
   return (
-    <div className='cursor-pointer'>
+    <div className='hidden xl:cursor-pointer'>
       <HoverCard.Root>
         <HoverCard.Trigger asChild>
           <div className="text-gray-100 flex w-32 justify-center items-center gap-2">
