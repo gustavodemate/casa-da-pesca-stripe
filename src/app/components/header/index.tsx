@@ -1,6 +1,5 @@
 import Image from "next/image";
 import logo from "../../../../assets/logo.png"
-import HoverCardHeader from "../hover-card";
 import Link from "next/link";
 import { CartCount } from "./cart-count";
 
@@ -21,7 +20,7 @@ export default function Header() {
 
        
         <div className="items-center justify-center flex gap-12">
-        <HoverCardHeader />
+        
         
          <div>
           <Link href={'/cart'} className="text-gray-100 cursor-pointer">

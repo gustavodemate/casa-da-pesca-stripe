@@ -4,6 +4,7 @@ import { BadgeCheck, CircleDollarSign, Truck } from "lucide-react";
 import Store from "./components/store";
 import { getProducts } from "./lib/fetch-stripe";
 import Error from "./error";
+import Footer from "./components/footer";
 
 export default async function Home() {
   const products = await getProducts()
@@ -31,6 +32,10 @@ export default async function Home() {
       </section>
 
       <Store products={products}/>
+
+      <section className="w-full">
+        <Footer />
+      </section>
     </div>
   )
 }
