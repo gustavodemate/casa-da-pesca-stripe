@@ -16,7 +16,7 @@ describe('Navigation', () => {
     cy.get('a').eq(0)
     cy.url().should('include', '/')
 
-    cy.get('h2').contains('FRETE GRÁTIS PARA TODO BRASIL')
+    cy.get('h3').contains('Produtos')
   })
 })
 
